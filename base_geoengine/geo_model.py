@@ -142,8 +142,8 @@ class GeoModel(orm.BaseModel):
                 geo_f_name = layer_dict['geo_field_id'][1]
                 res['fields'].update(self.fields_get(cursor, uid, [geo_f_name]))
         else:
-            return super(GeoModel, self).fields_view_get(cursor, uid, view_id, view_type,
-                                                         context, toolbar)
+            return super(GeoModel, self).fields_view_get(cursor, uid, view_id=view_id, view_type=view_type,
+                                                         context=contex, toolbar=toolbar)
         return res
 
     def get_edit_info_for_geo_column(self, cursor, uid, column, context=None):
